@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Prof Roger Bassan | 00</title>
+    <style>
+        body {
+            background-color: cornflowerblue;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        .box-nav {
+            background-color: gold;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .box {
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 5px;
+            border-radius: 5px;
+            color: white;
+            width: 80%;
+        }
+
+        input {
+            padding: 0.5px;
+        }
+
+        button {
+            padding: 1%;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            width: 50%;
+            margin: 5px 0;
+        }
+
+        button {
+            background-color: slateblue;
+            color: white;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        button:hover {
+            background-color: darkslateblue;
+        }
+
+        #resultado {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box-nav">
+        <h2>Disciplina de Algoritmos</h2>
+    </div>
+
+    <div class="box">
+        <p>Digite 20 números:</p>
+        <div id="inputs"></div>
+        <button onclick="contarNumeros()">Verificar</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        const inputsDiv = document.getElementById("inputs");
+
+        for (let i = 0; i < 20; i++) {
+            inputsDiv.innerHTML += `<input type="number" id="num${i}" placeholder="Número ${i + 1}"><br>`;
+        }
+
+        function contarNumeros() {
+            let contador = 0;
+
+            for (let i = 0; i < 20; i++) {
+                const valor = +document.getElementById("num" + i).value;
+                if (valor >= 0 && valor <= 100) contador++;
+            }
+
+            alert(`Quantidade de números entre 0 e 100: ${contador}`);
+        }
+    </script>
+</body>
+
+</html>

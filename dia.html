@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Prof Roger Bassan | 00</title>
+    <style>
+        body {
+            background-color: cornflowerblue;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        .box-nav {
+            background-color: gold;
+            padding: 5px;
+            border-radius: 15px;
+        }
+
+        .box {
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px;
+            border-radius: 15px;
+            color: white;
+        }
+
+        input {
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            font-size: 15px;
+            width: 50%;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            outline: none;
+            width: 50%;
+            background-color: slateblue;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        button:hover {
+            background-color: cornflowerblue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box-nav">
+        <h2>Disciplina de Algoritmos</h2>
+    </div>
+    <div class="box">
+        <p>Descubra o dia da Semana!</p>
+        <input type="number" id="semana" placeholder="digite um número de 1 a 7!">
+        <button onclick="go()">Enviar</button>
+    </div>
+    <script>
+        function go() {
+            let dia = Number(document.getElementById('semana').value)
+
+            switch (dia) {
+                case 1:
+                    alert(`O dia ${dia} é domingo`)
+                    break;
+                case 2:
+                    alert(`O dia ${dia} é segunda`)
+                    break;
+                case 3:
+                    alert(`O dia ${dia} é terça`)
+                    break;
+                case 4:
+                    alert(`O dia ${dia} é quarta`)
+                    break;
+                case 5:
+                    alert(`O dia ${dia} é quinta`)
+                    break;
+                case 6:
+                    alert(`O dia ${dia} é sexta`)
+                    break;
+                case 7:
+                    alert(`O dia ${dia} é sabado`)
+                    break;
+
+                default:
+                    alert(`Digite um número entre 1 e 7`)
+            }
+        }
+    </script>
+</body>
+
+</html>

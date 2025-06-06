@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Prof Roger Bassan | 00</title>
+    <style>
+        body {
+            background-color: cornflowerblue;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        .box-nav {
+            background-color: gold;
+            padding: 5px;
+            border-radius: 15px;
+        }
+
+        .box {
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px;
+            border-radius: 15px;
+            color: white;
+        }
+
+        input {
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            font-size: 15px;
+            width: 50%;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            outline: none;
+            width: 50%;
+            background-color: slateblue;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        button:hover {
+            background-color: cornflowerblue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box-nav">
+        <h2>Disciplina de Algoritmos</h2>
+    </div>
+    <div class="box">
+        <p>Descubra seu IMC</p>
+        <input type="number" id="altura" placeholder="Digite sua altura">
+        <input type="number" id="peso" placeholder="Digite seu peso">
+        <button onclick="go()">Enviar</button>
+    </div>
+    <script>
+        function go() {
+            var alt = Number(document.getElementById('altura').value);
+            var pes = Number(document.getElementById('peso').value);
+
+            const imc = pes / (alt * alt);
+
+            if (imc < 20) {
+                alert(`Você esta muito abaixo do peso ideal, procure ajuda. Seu IMC é de ${imc.toFixed(2)}`);
+            } else if (imc >= 20 && imc < 25) {
+                alert(`Você esta no peso ideal. Seu IMC é de ${imc.toFixed(2)}`);
+            } else if (imc >= 25 && imc < 30) {
+                alert(`Você esta acima do peso ideal. Seu IMC é de ${imc.toFixed(2)}`);
+            } else if (imc >= 30 && imc < 40) {
+                alert(`Você já é considerado obeso, recomendavel procurar ajuda. Seu IMC é de ${imc.toFixed(2)}`);
+            } else {
+                alert(`Você alcancou obesidade morbia, procure ajuda urgentemente! Seu IMC é de ${imc.toFixed(2)}`);
+            }
+        }
+    </script>
+</body>
+
+</html>
